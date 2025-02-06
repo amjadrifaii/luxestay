@@ -32,6 +32,7 @@
 
 <body class="index-page">
   <?php
+      
 
       session_start();
       if (!isset($_SESSION['user_id'])) {
@@ -39,8 +40,11 @@
           exit();
       }
       require 'db_connect.php';
+
       $user_id = $_SESSION['user_id'];
       include("header.html");
+        
+
   ?>
 
   <main class="main">
