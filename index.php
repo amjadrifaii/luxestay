@@ -32,7 +32,15 @@
 
 <body class="index-page">
   <?php
-  include("header.html");
+
+      session_start();
+      if (!isset($_SESSION['user_id'])) {
+          header("Location: login.php");
+          exit();
+      }
+      require 'db_connect.php';
+      $user_id = $_SESSION['user_id'];
+      include("header.html");
   ?>
 
   <main class="main">
