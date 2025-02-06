@@ -328,7 +328,11 @@ function selectDate(dateStr, dayElement) {
               const totalPrice =pricePerNight;
               nights=1;
               reservationDetails.innerText = `Check in: ${selectedStart}`;
-              checkout.innerText = `Checkout: ${selectedEnd}`;
+              const checkoutOneNight=new Date(selectedStart);
+              checkoutOneNight.setDate(checkoutOneNight.getDate()+1);
+              const formattedDate = formatDate(checkoutOneNight);
+              
+              checkout.innerText = `Checkout: ${formattedDate} Morning`;
               totalNights.innerText = `Total Nights: ${nights}`;
               prices.innerText = `Price: $${pricePerNight}`;
           
