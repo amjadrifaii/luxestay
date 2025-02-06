@@ -7,6 +7,9 @@
   <title>Property Single - GuestHouse Template</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
+
   <style>
         /* General Styles */
         body {
@@ -103,7 +106,7 @@
         }
     </style>
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/L-logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -129,6 +132,7 @@
 <?php
 
   include("header.html");
+  include("insert_reservation.php");
  
   ?>
 
@@ -234,6 +238,9 @@
         <input type="hidden" name="checkout_date" id="checkout_date">
         <input type="hidden" name="total_nights" id="total_nights">
         <input type="hidden" name="total_price" id="total_price">
+        <input type="hidden" name="reserv_start" id="reserv_start">
+        <input type="hidden" name="reserv_end" id="reserv_end">
+        <input type="hidden" name="selected_dates" id="selected_dates">
         <button type="button" onclick="confirmReservation()">Confirm Reservation</button>
         
           </form>
@@ -253,7 +260,7 @@ let selectedEnd = null;
 const pricePerNight = 120; // Price per night
 
 // Example of booked dates (Disable them)
-const bookedDates = ["2025-02-12", "2025-02-15", "2025-02-20"];
+const bookedDates = [];
 
 function generateCalendar(year, month, cal) {
     cal.innerHTML = ""; // Clear previous calendar
@@ -392,7 +399,6 @@ function resetSelection() {
     checkout.innerText = "";
     prices.innerText = "";
 }
-
 function confirmReservation() {
     // Check if the user has selected a start and end date
     if (!selectedStart || !selectedEnd) {
@@ -400,22 +406,42 @@ function confirmReservation() {
         return;
     }
 
-    // Calculate nights and total price here
     const nights = calculateNights(selectedStart, selectedEnd);
     const totalPrice = nights * pricePerNight;
 
     // Set the hidden fields for form submission
-    document.getElementById("checkin_date").value = selectedStart;
-    document.getElementById("checkout_date").value = selectedEnd;
-    document.getElementById("total_nights").value = nights;
-    document.getElementById("total_price").value = totalPrice;
+          let dateArray = [];
+          let currentDay=new Date(selectedStart);
+          while(currentDay<=new Date(selectedEnd)){
+                dateArray.push(formatDate(currentDay));
+                currentDay.setDate(currentDay.getDate()+1); // we add each day between start and end to the string ,GO
+                //                                                                         TO insert-reservation.php
+          }
+          document.getElementById("checkin_date").value = formatDate(selectedStart);
+          document.getElementById("checkout_date").value = formatDate(selectedEnd);
+          document.getElementById("total_nights").value = nights;
+          document.getElementById("total_price").value = totalPrice;
+          document.getElementById("selected_dates").value = dateArray.join(',');
 
-    // Now submit the form
-    document.querySelector("form").submit();
-    alert("Your booking has been successfully made \n" + " total price " + totalPrice);
+          // Submit the form
+          document.querySelector("form").submit();
+          
+    }
+    
+
+  
+
+
+function formatDate(date) {
+    const d = new Date(date);
+    let day = d.getDate();
+    let month = d.getMonth() + 1; // months are 0-based
+    let year = d.getFullYear().toString(); // get last 2 digits of the year
+    
+    if(day < 10) day = '0' + day;
+    if(month < 10) month = '0' + month;
+    return year+'-'+month+'-'+day;
 }
-
-// Initialize Calendars
 const today = new Date();
 generateCalendar(today.getFullYear(), today.getMonth(), calendar); // Current month
 generateCalendar(today.getFullYear(), today.getMonth() + 1, calendarNext); // Next month
@@ -486,7 +512,7 @@ generateCalendar(today.getFullYear(), today.getMonth() + 1, calendarNext); // Ne
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   
- 
+
 </body>
 
 </html>

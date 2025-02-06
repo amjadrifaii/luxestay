@@ -4,7 +4,7 @@
     $db_server="localhost";
     $user="root";
     $pass="";
-    $db_name="luxestay";
+    $db_name="project_guesthouse";
     try{$conn=mysqli_connect($db_server,$user,$pass,$db_name);
         ;}
     catch(mysqli_sql_exception){
@@ -25,6 +25,5 @@
 
   mysqli_query($conn,$mysql);
   */
-  mysqli_close($conn);
     
 ?>
