@@ -34,7 +34,7 @@
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
-
+        
         
 
         /* Calendar Grid */
@@ -61,6 +61,9 @@
             cursor: pointer;
             transition: all 0.2s;
             text-align: center;
+        }
+        .inline {
+          display: inline;
         }
 
         .day:hover {
@@ -473,11 +476,11 @@ generateCalendar(today.getFullYear(), today.getMonth() + 1, calendarNext); // Ne
                 <li><strong>Property ID:</strong> 1</li>
                 <li><strong>Location:</strong> Bint Jbeil</li>
                 <li"><strong>Property Type:</strong><p id="property_type"></p></li>
-                <li><strong>Status:</strong> Rent</li>
-                <li><strong>Area:</strong> <span>120m <sup>2</sup></span></li>
-                <li><strong>Beds:</strong> 4</li>
-                <li><strong>Baths:</strong> 2</li>
-                <li><strong>Rent:</strong> 120$</li>
+                <li><strong>Status:</strong><p id="house_status">Rent</p> </li>
+                <li><strong>Area:</strong> <p class="house_area inline" id="house_area"></p></li>
+                <li><strong>Beds:</strong> <p id="house_beds"></p></li>
+                <li><strong>Baths:</strong><p id="house_baths"></p></li>
+                <li><strong>Rent:</strong><p id="house_costpn"></p></li>
               </ul>
             </div>
           </div>
