@@ -136,7 +136,7 @@
  
   ?>
 
-  <main class="main">
+  <main class="main" id="main">
 
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
@@ -144,9 +144,8 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Cozy Heaven</h1>
-              <p class="mb-0">Nestled in the heart of Bint Jbeil, 
-                Cozy Heaven House offers a warm and inviting retreat for those seeking comfort and tranquility.</p>
+              <h1 class="house_name" id="house_name"></h1>
+              <p class="mb-0" id="house_description"></p>
             </div>
           </div>
         </div>
@@ -212,13 +211,7 @@
 
             <div class="portfolio-description">
               <h2>About this Place</h2>
-              <p>
-                Nestled in the heart of Bint Jbeil, Cozy Heaven House offers a warm and inviting
-                 retreat for those seeking comfort and tranquility. This charming guesthouse features cozy interiors,
-                  modern amenities, and a peaceful outdoor space, perfect for relaxing and unwinding. 
-                  Whether you're visiting family, exploring the beauty of South Lebanon, or simply escaping the city,
-                   our home provides the ideal setting for a memorable stay.
-                 Book your getaway today and experience true comfort in a welcoming atmosphere!
+              <p id="guest_house_about">
               </p>
           
    
@@ -515,7 +508,7 @@ generateCalendar(today.getFullYear(), today.getMonth() + 1, calendarNext); // Ne
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  
+  <script src="assets/js/retrieved-data.js"></script>
 
 </body>
 

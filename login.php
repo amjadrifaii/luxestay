@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Get the email and password from the POST request
     $email = $_POST["email"];
+    $_SESSION['email']=$email;
     $password = $_POST["password"];
 
     // Checking if the user exists in the table users
