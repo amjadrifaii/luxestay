@@ -154,7 +154,7 @@
         <div class="container">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">bint jbeil</li>
+            <li class="current" id="house_location">bint jbeil</li>
           </ol>
         </div>
       </nav>
@@ -472,7 +472,7 @@ generateCalendar(today.getFullYear(), today.getMonth() + 1, calendarNext); // Ne
               <ul>
                 <li><strong>Property ID:</strong> 1</li>
                 <li><strong>Location:</strong> Bint Jbeil</li>
-                <li><strong>Property Type:</strong> House</li>
+                <li"><strong>Property Type:</strong><p id="property_type"></p></li>
                 <li><strong>Status:</strong> Rent</li>
                 <li><strong>Area:</strong> <span>120m <sup>2</sup></span></li>
                 <li><strong>Beds:</strong> 4</li>

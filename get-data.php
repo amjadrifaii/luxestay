@@ -32,8 +32,28 @@
                 while($rows=mysqli_fetch_assoc($result))
                     $data[]=$rows;
             }
+    
         }
-    }
+
+        else if($uri=='/luxestay/get-data.php/get_guest_house_location'){
+            $query="SELECT loc.location_desc FROM locations loc JOIN guest_houses gh ON loc.location_id = gh.location_id WHERE gh.guest_house_id=1";
+            $result=mysqli_query($conn,$query);
+            if($result&&mysqli_num_rows($result)>0){
+                while($rows=mysqli_fetch_assoc($result))
+                    $data[]=$rows;
+            }
+        }
+
+
+    else if($uri=='/luxestay/get-data.php/get_house_type'){
+        $query="SELECT ht.type_desc FROM house_types ht JOIN guest_houses gh ON ht.type_id = gh.house_type WHERE gh.guest_house_id=1";
+        $result=mysqli_query($conn,$query);
+        if($result&&mysqli_num_rows($result)>0){
+            while($rows=mysqli_fetch_assoc($result))
+                $data[]=$rows;
+        }
+}
+}
     
     
     
