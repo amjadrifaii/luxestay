@@ -69,16 +69,3 @@ fetch('get-data.php/get_house_images')
 
     )
     .catch(error => console.error('Error fetching guest house images:', error));
-    fetch('get-data.php/get_reservations')
-    .then(response=>response.json())
-    .then(item=>{
-        if(item && item.length>0){
-            for(i=0;i<item.length-1;i++)
-                bookedDates+=item[i].reservation_date+',';
-            }
-            bookedDates+=item[i].reservation_date;
-            book=bookedDates.split(',');
-            console.log(book);
-            
-    
-    })     .catch(error => console.error('Error fetching reservation dates:', error));;
