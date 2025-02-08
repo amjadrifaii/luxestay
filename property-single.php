@@ -1,6 +1,12 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['guest_house_id']))
+  $_SESSION['guest_house_id']=$_GET['guest_house_id'];
+  if($_SESSION['guest_house_id']!=$_GET['guest_house_id'])
+    $_SESSION['guest_house_id']=$_GET['guest_house_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -221,11 +227,11 @@
                 <p id="guest_house_about">
                 </p>
           </div>
-          <form method="POST">
+          <form method="GET">
  <h2><b>Reservation Calendar:</b></h2>
  
     <div id="calendar-container">
-      
+        
         <div id="calendar"></div>
         <div id="calendarNext"></div>
         <p id="checkin">Select your reservation dates.</p>

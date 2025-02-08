@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+require 'db_connect.php';
+$user_id = $_SESSION['user_id'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,15 +43,7 @@
 </head>
 
 <body class="index-page">
-  <?php
-
-      session_start();
-      if (!isset($_SESSION['user_id'])) {
-          header("Location: login.php");
-          exit();
-      }
-      require 'db_connect.php';
-      $user_id = $_SESSION['user_id'];
+ <?php
       include("header.html");
   ?>
 
@@ -56,6 +60,7 @@
           <img src="assets/img/hero-carousel/mountainView.jpg" alt="">
           <div class="carousel-container">
             <div>
+
               <p>Mountain View</p>
               <h2>Hemena</h2>
               <p id="test"></p>

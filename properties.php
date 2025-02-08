@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+require 'db_connect.php';
+$user_id = $_SESSION['user_id'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,10 +79,11 @@
     </div><!-- End Page Title -->
 
     <!-- Real Estate Section -->
+     <form METHOD="POST">
     <section id="real-estate" class="real-estate section">
 
       <div class="container">
-
+      
         <div class="row gy-4">
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -78,7 +92,7 @@
               
               <div class="card-body">
                 <span class="sale-rent">Rent | $120</span>
-                <h3><a href="property-single.php" class="stretched-link">Cozy Heaven</a></h3>
+                <h3><a type="submit" href="property-single.php?guest_house_id=1" class="stretched-link">Cozy Heaven</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -97,12 +111,13 @@
             </div>
           </div><!-- End Property Item -->
 
+        
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card">
               <img src="assets/img/properties/gardenRetreat.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | 80$</span>
-                <h3><a href="property-single.html" class="stretched-link">Garden Retreat</a></h3>
+                <h3><a href="property-single.php?guest_house_id=2" class="stretched-link">Garden Retreat</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -121,12 +136,13 @@
             </div>
           </div><!-- End Property Item -->
 
+
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card">
               <img src="assets/img/properties/mountainView.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $100</span>
-                <h3><a href="property-single.html" class="stretched-link">Moutain View</a></h3>
+                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Moutain View</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -150,7 +166,7 @@
               <img src="assets/img/properties/peacefulCottage.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $100</span>
-                <h3><a href="property-single.html" class="stretched-link">Peaceful Cottage</a></h3>
+                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Peaceful Cottage</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -174,7 +190,7 @@
               <img src="assets/img/properties/pineRidge.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $300</span>
-                <h3><a href="property-single.html" class="stretched-link">Pine Ridge</a></h3>
+                <h3><a href="property-single.?guest_house_id=3" class="stretched-link">Pine Ridge</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -198,7 +214,7 @@
               <img src="assets/img/properties/property-1.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $100</span>
-                <h3><a href="property-single.html" class="stretched-link">Property</a></h3>
+                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Property</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -222,7 +238,7 @@
               <img src="assets/img/properties/sunrise.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $90</span>
-                <h3><a href="property-single.html" class="stretched-link">Sunrise</a></h3>
+                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Sunrise</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -245,7 +261,7 @@
               <img src="assets/img/properties/sunsetVilla.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $200</span>
-                <h3><a href="property-single.html" class="stretched-link">Sunset villa</a></h3>
+                <h3><a href="property-single.php?guest_house_id=2" class="stretched-link">Sunset villa</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -269,7 +285,7 @@
               <img src="assets/img/properties/tranquil.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $50</span>
-                <h3><a href="property-single.html" class="stretched-link">Peace</a></h3>
+                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Peace</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -291,7 +307,7 @@
         </div>
 
       </div>
-
+</form>
     </section><!-- /Real Estate Section -->
 
   </main>

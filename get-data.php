@@ -4,6 +4,7 @@
     $uri=$_SERVER['REQUEST_URI'];// get the part in url after localhost
     $request_method=$_SERVER['REQUEST_METHOD'];
     $email=$_SESSION['email'];//get email through session
+    $house_id =$_SESSION['guest_house_id'];
     $data=[];
     if($request_method=='GET'){
         if($uri=='/luxestay/get-data.php/users'){
@@ -19,7 +20,7 @@
     
         else if ($uri=="/luxestay/get-data.php/get_guest_house"){
             $query="SELECT guest_house_name, area,beds,baths,cost, guest_house_des, guest_house_about,
-             guest_house_id,owner_id, location_id FROM guest_houses WHERE guest_house_id=1";
+             guest_house_id,owner_id, location_id FROM guest_houses WHERE guest_house_id=$house_id";
             $result=mysqli_query($conn,$query);
             if($result && mysqli_num_rows($result)>0){
                 while($rows=mysqli_fetch_assoc($result))
@@ -29,7 +30,7 @@
         }
 
         else if($uri=='/luxestay/get-data.php/get_guest_house_location'){
-            $query="SELECT loc.location_desc FROM locations loc JOIN guest_houses gh ON loc.location_id = gh.location_id WHERE gh.guest_house_id=1";
+            $query="SELECT loc.location_desc FROM locations loc JOIN guest_houses gh ON loc.location_id = gh.location_id WHERE gh.guest_house_id=$house_id";
             $result=mysqli_query($conn,$query);
             if($result&&mysqli_num_rows($result)>0){
                 while($rows=mysqli_fetch_assoc($result))
@@ -39,7 +40,7 @@
 
 
     else if($uri=='/luxestay/get-data.php/get_house_type'){
-        $query="SELECT ht.type_desc FROM house_types ht JOIN guest_houses gh ON ht.type_id = gh.house_type WHERE gh.guest_house_id=1";
+        $query="SELECT ht.type_desc FROM house_types ht JOIN guest_houses gh ON ht.type_id = gh.house_type WHERE gh.guest_house_id=$house_id";
         $result=mysqli_query($conn,$query);
         if($result&&mysqli_num_rows($result)>0){
             while($rows=mysqli_fetch_assoc($result))
@@ -48,7 +49,7 @@
     }
 
     else if($uri=='/luxestay/get-data.php/get_house_images'){
-        $query="SELECT image_path FROM images WHERE guest_house_id=1";
+        $query="SELECT image_path FROM images WHERE guest_house_id=$house_id";
         $result=mysqli_query($conn,$query);
         if($result && mysqli_num_rows($result)>0){
             while($rows=mysqli_fetch_assoc($result))
@@ -58,7 +59,7 @@
     }
 
     else if ($uri=='/luxestay/get-data.php/get_reservations'){
-        $query="SELECT reservation_date FROM reservations";
+        $query="SELECT reservation_date FROM reservations WHERE house_id=$house_id";
         $result=mysqli_query($conn,$query);
         if($result&& mysqli_num_rows($result)>0){
             
