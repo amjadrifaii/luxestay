@@ -17,14 +17,6 @@
             }
         }
     
-        else if($uri=='/luxestay/get-data.php/properties'){
-                $query="SELECT guest_house_name FROM guest_houses";
-                $result=mysqli_query($conn,$query);
-                if($result&&mysqli_num_rows($result)>0){
-                    while($rows=mysqli_fetch_assoc($result))
-                        $data[]=$rows;
-                }
-            }
         else if ($uri=="/luxestay/get-data.php/get_guest_house"){
             $query="SELECT guest_house_name, area,beds,baths,cost, guest_house_des, guest_house_about,
              guest_house_id,owner_id, location_id FROM guest_houses WHERE guest_house_id=1";
@@ -53,7 +45,30 @@
             while($rows=mysqli_fetch_assoc($result))
                 $data[]=$rows;
         }
-}
+    }
+
+    else if($uri=='/luxestay/get-data.php/get_house_images'){
+        $query="SELECT image_path FROM images WHERE guest_house_id=1";
+        $result=mysqli_query($conn,$query);
+        if($result && mysqli_num_rows($result)>0){
+            while($rows=mysqli_fetch_assoc($result))
+                $data[]=$rows;
+            echo $rows;
+        }
+    }
+
+    else if ($uri=='/luxestay/get-data.php/get_reservations'){
+        $query="SELECT reservation_date FROM reservations";
+        $result=mysqli_query($conn,$query);
+        if($result&& mysqli_num_rows($result)>0){
+            
+            while($rows=mysqli_fetch_assoc($result)){
+            $data[]=$rows;
+            }
+            
+        }
+
+    }
 }
     
     

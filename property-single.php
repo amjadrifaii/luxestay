@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
  
 
   <style>
@@ -134,9 +135,9 @@
 
 <?php
 
-  include("header.html");
+  
   include("insert_reservation.php");
- 
+  include("header.html");
   ?>
 
   <main class="main" id="main">
@@ -191,15 +192,15 @@
           <div class="swiper-wrapper align-items-center">
 
             <div class="swiper-slide">
-              <img src="assets/img/property-slide/cozyHaven.jpg" alt="">
+              <img id="image_field_1" alt="">
             </div>
 
             <div class="swiper-slide">
-              <img src="assets/img/property-slide/cozyHaven2.jpg" alt="">
+              <img id="image_field_2" alt="">
             </div>
 
             <div class="swiper-slide">
-              <img src="assets/img/property-slide/cozyHaven3.jpg" alt="">
+              <img id="image_field_3" alt="">
             </div>
 
           </div>
@@ -238,6 +239,7 @@
         <input type="hidden" name="reserv_end" id="reserv_end">
         <input type="hidden" name="selected_dates" id="selected_dates">
         <button type="button" onclick="confirmReservation()">Confirm Reservation</button>
+        <div id="array_reciever" data-confirmReservation
         
           </form>
           
@@ -245,6 +247,7 @@
     
    
     <script>
+      
    const calendar = document.getElementById("calendar");
 const calendarNext = document.getElementById("calendarNext");
 const reservationDetails = document.getElementById("checkin");
@@ -254,34 +257,36 @@ const prices = document.getElementById("price");
 let selectedStart = null;
 let selectedEnd = null;
 const pricePerNight = 120; // Price per night
+let bookedDates=[];
+let book;
 
 // Example of booked dates (Disable them)
-const bookedDates = [];
-
 function generateCalendar(year, month, cal) {
     cal.innerHTML = ""; // Clear previous calendar
-    const firstDay = new Date(year, month + 1, 1);//first day of current month
-    const lastDay = new Date(year, month + 1, 0); // last day of current month
+    const firstDay = new Date(year, month, 1);  // First day of the current month
+    const lastDay = new Date(year, month + 1, 0); // Last day of the current month
+    // Loop through each day of the month
     for (let day = 1; day <= lastDay.getDate(); day++) {
         const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-        /* this is a common way for dates to get or send dates to a DB:
-          gets year - gets month and convert it to string then pad it with 0 if string less than 2 cahracters
-          gets day convert it to string then pad it with 0 if string less than 2 cahracters*/
+        const dateStr2 = "2025-03-05";
         const dayElement = document.createElement("div");
         dayElement.classList.add("day");
         dayElement.textContent = day;
         dayElement.setAttribute("data-date", dateStr); // Add a data attribute for the date
-
-        // Disable booked dates
-        if (bookedDates.includes(dateStr)) {
-            dayElement.classList.add("disabled"); //adds disabled class to taken dates to make them grayed out in css line 74
+        // Check if the date is booked
+        if (bookedDates.includes(dateStr2)) {
+          console.log("asdasdad");
+            dayElement.classList.add("disabled");  // Disable this date if it's in bookedDates
         } else {
+            // Enable the date for selection if it's not booked
             dayElement.addEventListener("click", () => selectDate(dateStr, dayElement));
         }
 
-        cal.appendChild(dayElement);//add button of day of the month
+        // Append the day element to the calendar
+        cal.appendChild(dayElement);
     }
 }
+
 
 function selectDate(dateStr, dayElement) { 
       prevdateChecker=new Date(dateStr);
@@ -371,7 +376,9 @@ function highlightRange(start, end) {
     // Loop through all days in both calendars
     document.querySelectorAll(".day").forEach(day => {
         const dayDateStr = day.getAttribute("data-date");
+      
         const dayDate = new Date(dayDateStr);
+       
 
         // Highlight if the day is within the selected range
         if (dayDate >= startDate && dayDate <= endDate && !bookedDates.includes(dayDateStr)) { 
@@ -512,7 +519,6 @@ generateCalendar(today.getFullYear(), today.getMonth() + 1, calendarNext); // Ne
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/retrieved-data.js"></script>
-
 </body>
 
 </html>

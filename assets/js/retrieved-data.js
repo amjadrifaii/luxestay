@@ -8,7 +8,10 @@ let area=document.getElementById("house_area");
 let beds=document.getElementById("house_beds");
 let baths=document.getElementById("house_baths");
 let costpn=document.getElementById("house_costpn");
-
+let img1=document.getElementById("image_field_1");
+let img2=document.getElementById("image_field_2");
+let img3=document.getElementById("image_field_3");
+let i=0;
 fetch('get-data.php/get_guest_house')
     .then(response => response.json())
     .then(item => {
@@ -23,7 +26,7 @@ fetch('get-data.php/get_guest_house')
             baths.innerHTML=item[0].baths;
             costpn.innerHTML=item[0].cost;
             costpn.innerHTML+="$";
-            console.log(item);
+
         } else {
             title.innerHTML = "Guest house not found.";
         }
@@ -33,7 +36,7 @@ fetch('get-data.php/get_guest_house')
 
 
 fetch('get-data.php/get_guest_house_location')
-.then(response => response.json())
+    .then(response => response.json())
     .then(item => {
         if (item && item.length > 0) {
             loc.innerHTML= item[0].location_desc;
@@ -44,15 +47,38 @@ fetch('get-data.php/get_guest_house_location')
     })
     .catch(error => console.error('Error fetching guest house location data:', error));
 
-    fetch('get-data.php/get_house_type')
-.then(response => response.json())
+fetch('get-data.php/get_house_type')
+    .then(response => response.json())
     .then(item => {
         if (item && item.length > 0) {
             type.innerHTML= item[0].type_desc;
-            console.log(item[0].type_desc);
 
         } else {
             title.innerHTML = "Unkown Location"
         }
     })
-    .catch(error => console.error('Error fetching guest house location data:', error));
+fetch('get-data.php/get_house_images')
+    .then(response=>response.json())
+    .then(item=>{
+        if(item && item.length>0){
+            img1.src=item[0].image_path;
+            img2.src=item[1].image_path;
+            img3.src=item[2].image_path;
+        }
+        }
+
+    )
+    .catch(error => console.error('Error fetching guest house images:', error));
+    fetch('get-data.php/get_reservations')
+    .then(response=>response.json())
+    .then(item=>{
+        if(item && item.length>0){
+            for(i=0;i<item.length-1;i++)
+                bookedDates+=item[i].reservation_date+',';
+            }
+            bookedDates+=item[i].reservation_date;
+            book=bookedDates.split(',');
+            console.log(book);
+            
+    
+    })     .catch(error => console.error('Error fetching reservation dates:', error));;

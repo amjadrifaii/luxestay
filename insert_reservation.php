@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
   
 
-
   mysqli_close($conn);
-  
+  header("Location:/luxestay/property-single.php");//this is solution to entering same values on refresh(idk why it happened)
+  exit();
 }
 ?>
