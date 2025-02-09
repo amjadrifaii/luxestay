@@ -1,6 +1,21 @@
+<?php
+  session_start();
+  if (!isset($_SESSION['user_id'])) {
+      header("Location: login.php");
+      exit();
+  }
+  
+  
+  $user_id = $_SESSION['user_id'];
+  if (isset($_GET['guest_house_id'])){
+        $_SESSION['guest_house_id']=$_GET['guest_house_id'];
+  }
+  
+  require 'db_connect.php';
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -162,7 +177,7 @@
         <div class="container">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current" id="house_location">bint jbeil</li>
+            <li class="current" id="house_location"></li>
           </ol>
         </div>
       </nav>
@@ -225,7 +240,7 @@
  <h2><b>Reservation Calendar:</b></h2>
  
     <div id="calendar-container">
-      
+        
         <div id="calendar"></div>
         <div id="calendarNext"></div>
         <p id="checkin">Select your reservation dates.</p>
@@ -254,13 +269,14 @@
               <div class="portfolio-info">
                 <h3>Quick Summary</h3>
                 <ul>
-                  <li><strong>Property ID:</strong> 1</li>
-                  <li><strong>Location:</strong> Bint Jbeil</li>
+                  <li><strong>Property ID:</strong><p id="property_id"></p></li>
+                  <li><strong>Location:</strong><p id="property_location"></p></li>
                   <li"><strong>Property Type:</strong><p id="property_type"></p></li>
                   <li><strong>Status:</strong><p id="house_status">Rent</p> </li>
                   <li><strong>Area:</strong> <p class="house_area inline" id="house_area"></p></li>
                   <li><strong>Beds:</strong> <p id="house_beds"></p></li>
                   <li><strong>Baths:</strong><p id="house_baths"></p></li>
+                  <li><strong>Garages:</strong><p id="house_garages"></p></li>
                   <li><strong>Rent:</strong><p id="house_costpn"></p></li>
                 </ul>
               </div>

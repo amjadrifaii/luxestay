@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2025 at 10:03 PM
+-- Generation Time: Feb 09, 2025 at 09:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -72,6 +72,11 @@ INSERT INTO `commission_history` (`change_date`, `comm_value`, `admin_id`) VALUE
 CREATE TABLE `guest_houses` (
   `guest_house_id` int(11) NOT NULL,
   `guest_house_name` varchar(20) NOT NULL,
+  `area` int(11) NOT NULL,
+  `beds` int(11) NOT NULL,
+  `baths` int(11) NOT NULL,
+  `garages` int(11) NOT NULL,
+  `cost` int(11) NOT NULL,
   `guest_house_ppd` int(11) NOT NULL,
   `guest_house_des` varchar(1000) NOT NULL,
   `guest_house_about` varchar(1000) NOT NULL,
@@ -85,25 +90,25 @@ CREATE TABLE `guest_houses` (
 -- Dumping data for table `guest_houses`
 --
 
-INSERT INTO `guest_houses` (`guest_house_id`, `guest_house_name`, `guest_house_ppd`, `guest_house_des`, `guest_house_about`, `guest_house_persons`, `owner_id`, `location_id`, `house_type`) VALUES
-(1, 'Cozy Haven', 200, 'Nestled in the heart of Bint Jbeil, \n                Cozy Heaven House offers a warm and inviting retreat for those seeking comfort and tranquility.', 'Nestled in the heart of Bint Jbeil, Cozy Heaven House offers a warm and inviting retreat for those seeking comfort and tranquility. This charming guesthouse features cozy interiors, modern amenities, and a peaceful outdoor space, perfect for relaxing and unwinding. Whether you\'re visiting family, exploring the beauty of South Lebanon, or simply escaping the city, our home provides the ideal setting for a memorable stay. Book your getaway today and experience true comfort in a welcoming atmosphere!', 4, 3, 29, 9),
-(2, 'Garden Retreat', 150, 'A charming guesthouse surrounded by beautiful gardens, offering a peaceful and relaxing stay.', '', 2, 6, 5, 10),
-(3, 'Serenity House', 350, 'A tranquil and serene guesthouse, designed to promote relaxation and rejuvenation.', '', 6, 1, 3, 10),
-(4, 'Mountain View', 100, 'A guesthouse situated in the mountains.Offering breathtaking views and a peaceful escape from the city.', '', 4, 4, 2, 9),
-(5, 'Peaceful Cottage', 60, 'A charming cottage-style guesthouse, providing a peaceful and relaxing environment for guests.', '', 2, 4, 6, 6),
-(6, 'Pine Ridge', 550, 'A rustic and cozy guesthouse nestled in a pine forest, offering a secluded and peaceful retreat.', '', 4, 5, 5, 5),
-(7, 'Sunrise', 190, 'A guesthouse that boasts beautiful sunrise views, perfect for early risers and nature lovers.', '', 3, 1, 4, 7),
-(8, 'Sunset Villa', 630, 'A guesthouse with stunning sunset views, ideal for those looking to unwind and enjoy the beauty of nature.', '', 2, 2, 8, 3),
-(9, 'Tranquil Hideaway', 125, 'A hidden gem of a guesthouse, offering a tranquil and secluded escape from the hustle and bustle of daily life.', '', 3, 8, 9, 4),
-(18, 'Cozy Haven', 200, 'A warm and welcoming retreat with comfortable furnishings and a cozy atmosphere.', '', 4, 3, 1, 9),
-(19, 'Garden Retreat', 150, 'A charming guesthouse surrounded by beautiful gardens, offering a peaceful and relaxing stay.', '', 2, 6, 5, 10),
-(20, 'Serenity House', 350, 'A tranquil and serene guesthouse, designed to promote relaxation and rejuvenation.', '', 6, 1, 3, 10),
-(21, 'Mountain View', 100, 'A guesthouse situated in the mountains.Offering breathtaking views and a peaceful escape from the city.', '', 4, 4, 2, 9),
-(22, 'Peaceful Cottage', 60, 'A charming cottage-style guesthouse, providing a peaceful and relaxing environment for guests.', '', 2, 4, 6, 6),
-(23, 'Pine Ridge', 550, 'A rustic and cozy guesthouse nestled in a pine forest, offering a secluded and peaceful retreat.', '', 4, 5, 5, 5),
-(24, 'Sunrise', 190, 'A guesthouse that boasts beautiful sunrise views, perfect for early risers and nature lovers.', '', 3, 1, 4, 7),
-(25, 'Sunset Villa', 630, 'A guesthouse with stunning sunset views, ideal for those looking to unwind and enjoy the beauty of nature.', '', 2, 2, 8, 3),
-(26, 'Tranquil Hideaway', 125, 'A hidden gem of a guesthouse, offering a tranquil and secluded escape from the hustle and bustle of daily life.', '', 3, 8, 9, 4);
+INSERT INTO `guest_houses` (`guest_house_id`, `guest_house_name`, `area`, `beds`, `baths`, `garages`, `cost`, `guest_house_ppd`, `guest_house_des`, `guest_house_about`, `guest_house_persons`, `owner_id`, `location_id`, `house_type`) VALUES
+(1, 'Cozy Haven', 130, 4, 2, 2, 130, 200, 'Nestled in the heart of Jbeil, \r\n                Cozy Heaven House offers a warm and inviting retreat for those seeking comfort and tranquility.', 'Nestled in the heart of Jbeil, Cozy Heaven House offers a warm and inviting retreat for those seeking comfort and tranquility. This charming guesthouse features cozy interiors, modern amenities, and a peaceful outdoor space, perfect for relaxing and unwinding. Whether you\'re visiting family, exploring the beauty of South Lebanon, or simply escaping the city, our home provides the ideal setting for a memorable stay. Book your getaway today and experience true comfort in a welcoming atmosphere!', 4, 3, 29, 9),
+(2, 'Garden Retreat', 60, 2, 2, 3, 80, 150, 'A charming guesthouse surrounded by beautiful gardens, offering a peaceful and relaxing stay.', 'A charming guesthouse surrounded by beautiful gardens, offering a peaceful and relaxing stay, where you can unwind amidst nature\'s serenity, enjoy the soothing sounds of birdsong, and experience warm hospitality in a cozy, home-like atmosphere. Whether you\'re seeking a quiet retreat or a base to explore the surrounding area, this guesthouse provides the perfect blend of comfort and tranquility at the Zahl&eacute; Mounts.', 2, 6, 5, 10),
+(3, 'Serenity House', 0, 0, 0, 0, 0, 350, 'A tranquil and serene guesthouse, designed to promote relaxation and rejuvenation.', '', 6, 1, 3, 10),
+(4, 'Mountain View', 80, 5, 2, 2, 100, 100, 'A guesthouse situated in the mountains.Offering breathtaking views and a peaceful escape from the city.', 'A guesthouse situated in the Tripoli Heights, offering breathtaking views and a peaceful escape from the city, where crisp mountain air rejuvenates your senses and panoramic vistas of rolling hills or snow-capped peaks greet you at every turn. Whether you\'re cozying up by the fireplace, exploring scenic trails, or simply soaking in the tranquility of nature, this mountain retreat promises an unforgettable experience of serenity and adventure.\r\n', 4, 4, 2, 9),
+(5, 'Peaceful Cottage', 45, 1, 2, 1, 40, 60, 'A charming cottage-style guesthouse, providing a peaceful and relaxing environment for guests.', 'A charming cottage-style guesthouse, providing a peaceful and relaxing environment for guests, nestled in the historic heart of Baalbek, where ancient ruins and timeless landscapes create a magical backdrop. Surrounded by lush gardens and the gentle whispers of history, this retreat offers a perfect blend of rustic charm and modern comfort. Wake up to the golden hues of sunrise over the iconic Roman temples, savor traditional Lebanese breakfasts on the terrace, and unwind in the serene ambiance of this enchanting haven. Whether you\'re exploring the archaeological wonders of Baalbek or simply enjoying the tranquility of the countryside, this guesthouse is your ideal escape', 2, 4, 6, 6),
+(6, 'Pine Ridge', 100, 4, 2, 2, 300, 550, 'A rustic and cozy guesthouse nestled in a pine forest, offering a secluded and peaceful retreat.', 'A rustic and cozy guesthouse nestled in a pine forest, offering a secluded and peaceful retreat, in the picturesque town of Zahl&eacute;, where the scent of pine trees mingles with the fresh mountain breeze. Surrounded by lush greenery and the soothing sounds of nature, this charming hideaway is the perfect escape from the hustle and bustle of everyday life. Spend your days exploring nearby vineyards, strolling along the serene Berdawni River, or simply relaxing on the wooden porch with a cup of locally brewed coffee. As the sun sets, gather around a crackling fire pit under a canopy of stars, and let the tranquility of this forested haven rejuvenate your soul. Whether you\'re seeking adventure or relaxation, this guesthouse in Zahl&eacute; promises an unforgettable retreat.', 4, 5, 5, 5),
+(7, 'Sunrise', 0, 0, 0, 0, 0, 190, 'A guesthouse that boasts beautiful sunrise views, perfect for early risers and nature lovers.', '', 3, 1, 4, 7),
+(8, 'Sunset Villa', 200, 5, 4, 4, 300, 630, 'A guesthouse with stunning sunset views, ideal for those looking to enjoy the luxurious life.', 'A guesthouse in the heart of Batroun, with stunning sunset views, ideal for those looking to enjoy the luxurious life, where every evening paints the sky in vibrant hues of gold, pink, and orange, creating a mesmerizing backdrop for your stay. Designed with elegance and sophistication, this retreat offers spacious, beautifully appointed rooms, private balconies, and infinity pools that seem to blend seamlessly with the horizon. Indulge in gourmet dining experiences, unwind with bespoke spa treatments, and savor the finest wines as you watch the sun dip below the horizon. Whether you\'re celebrating a special occasion or simply seeking a lavish escape, this guesthouse promises an unparalleled experience of opulence and tranquility, where every moment feels like a dream', 2, 2, 7, 3),
+(9, 'Tranquil Hideaway', 0, 0, 0, 0, 0, 125, 'A hidden gem of a guesthouse, offering a tranquil and secluded escape from the hustle and bustle of daily life.', '', 3, 8, 9, 4),
+(18, 'Cozy Haven', 0, 0, 0, 0, 0, 200, 'A warm and welcoming retreat with comfortable furnishings and a cozy atmosphere.', '', 4, 3, 1, 9),
+(19, 'Garden Retreat', 0, 0, 0, 0, 0, 150, 'A charming guesthouse surrounded by beautiful gardens, offering a peaceful and relaxing stay.', '', 2, 6, 5, 10),
+(20, 'Serenity House', 0, 0, 0, 0, 0, 350, 'A tranquil and serene guesthouse, designed to promote relaxation and rejuvenation.', '', 6, 1, 3, 10),
+(21, 'Mountain View', 0, 0, 0, 0, 0, 100, 'A guesthouse situated in the mountains.Offering breathtaking views and a peaceful escape from the city.', '', 4, 4, 2, 9),
+(22, 'Peaceful Cottage', 0, 0, 0, 0, 0, 60, 'A charming cottage-style guesthouse, providing a peaceful and relaxing environment for guests.', '', 2, 4, 6, 6),
+(23, 'Pine Ridge', 0, 0, 0, 0, 0, 550, 'A rustic and cozy guesthouse nestled in a pine forest, offering a secluded and peaceful retreat.', '', 4, 5, 5, 5),
+(24, 'Sunrise', 0, 0, 0, 0, 0, 190, 'A guesthouse that boasts beautiful sunrise views, perfect for early risers and nature lovers.', '', 3, 1, 4, 7),
+(25, 'Sunset Villa', 0, 0, 0, 0, 0, 630, 'A guesthouse with stunning sunset views, ideal for those looking to unwind and enjoy the beauty of nature.', '', 2, 2, 8, 3),
+(26, 'Tranquil Hideaway', 0, 0, 0, 0, 0, 125, 'A hidden gem of a guesthouse, offering a tranquil and secluded escape from the hustle and bustle of daily life.', '', 3, 8, 9, 4);
 
 -- --------------------------------------------------------
 
@@ -165,30 +170,30 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`image_id`, `image_path`, `guest_house_id`) VALUES
-(1, 'photos/cozyHaven.jpg', 1),
-(2, 'photos/cozyHaven2.jpg', 1),
-(3, 'photos/cozyHaven3.jpg', 1),
-(4, 'photos/gardenRetreat.jpg', 2),
-(5, 'photos/gardenRetreat2.jpg', 2),
-(6, 'photos/gardenRetreat3.jpg', 2),
+(1, 'assets/img/property-slide/cozyHaven.jpg', 1),
+(2, 'assets/img/property-slide/cozyHaven2.jpg\r\n', 1),
+(3, 'assets/img/property-slide/cozyHaven3.jpg', 1),
+(4, 'assets/img/property-slide/gardenRetreat.jpg', 2),
+(5, 'assets/img/property-slide/gardenRetreat2.jpg', 2),
+(6, 'assets/img/property-slide/gardenRetreat3.jpg', 2),
 (7, 'photos/mountainView.jpg', 3),
 (8, 'photos/mountainView2.jpg', 3),
 (9, 'photos/mountainView3.jpg', 3),
-(10, 'photos/peacefulCottage.jpg', 4),
-(11, 'photos/peacefulCottage2.jpg', 4),
-(12, 'photos/peacefulCottage3.jpg', 4),
-(13, 'photos/pineRidge.jpg', 5),
-(14, 'photos/pineRidge2.jpg', 5),
-(15, 'photos/pineRidge3.jpg', 5),
-(16, 'photos/serenityHouse.jpg', 6),
-(17, 'photos/serenityHouse2.jpg', 6),
-(18, 'photos/serenityHouse3.jpg', 6),
+(10, 'assets/img/property-slide/mountainView.jpg', 4),
+(11, 'assets/img/property-slide/mountainView2.jpg', 4),
+(12, 'assets/img/property-slide/mountainView3.jpg', 4),
+(13, 'assets/img/property-slide/peacefulCottage.jpg', 5),
+(14, 'assets/img/property-slide/peacefulCottage2.jpg', 5),
+(15, 'assets/img/property-slide/peacefulCottage3.jpg', 5),
+(16, 'assets/img/property-slide/pineRidge.jpg', 6),
+(17, 'assets/img/property-slide/pineRidge2.jpg', 6),
+(18, 'assets/img/property-slide/pineRidge3.jpg', 6),
 (19, 'photos/sunrise.jpg', 7),
 (20, 'photos/sunrise2.jpg', 7),
 (21, 'photos/sunrise3.jpg', 7),
-(22, 'photos/sunsetVilla.jpg', 8),
-(23, 'photos/sunsetVilla2.jpg', 8),
-(24, 'photos/sunsetVilla3.jpg', 8),
+(22, 'assets/img/property-slide/sunsetVilla.jpg', 8),
+(23, 'assets/img/property-slide/sunsetVilla2.jpg', 8),
+(24, 'assets/img/property-slide/sunsetVilla3.jpg', 8),
 (25, 'photos/tranquil.jpg', 9),
 (26, 'photos/tranquil2.jpg', 9),
 (27, 'photos/tranquil3.jpg', 9),
@@ -240,7 +245,7 @@ INSERT INTO `locations` (`location_id`, `location_desc`) VALUES
 (2, 'Tripoli'),
 (3, 'Sidon'),
 (4, 'Byblos '),
-(5, 'Zahle'),
+(5, 'Zahl&eacute;'),
 (6, 'Baalbek'),
 (7, 'Batroun'),
 (8, 'Nabatieh'),
@@ -348,7 +353,7 @@ INSERT INTO `reminder` (`reminder_id`, `reminder_date`, `reminder_content`, `res
 
 CREATE TABLE `reservations` (
   `reservation_id` int(11) NOT NULL,
-  `reservation_date` date NOT NULL,
+  `reservation_date` varchar(15) NOT NULL,
   `house_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -358,7 +363,7 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`reservation_id`, `reservation_date`, `house_id`, `user_id`) VALUES
-(225, '2025-03-06', 1, 1);
+(602, '2025-02-09', 1, 1007);
 
 -- --------------------------------------------------------
 
@@ -504,13 +509,13 @@ ALTER TABLE `reminder`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=226;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=603;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1008;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
