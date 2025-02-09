@@ -88,7 +88,7 @@ $user_id = $_SESSION['user_id'];
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <img src="assets/img/properties/cozyhaven.jpg" alt="" class="img-fluid">
+              <img id="img1" alt="" class="img-fluid">
               
               <div class="card-body">
                 <span class="sale-rent" id="prop1_cost"></span>
@@ -114,10 +114,10 @@ $user_id = $_SESSION['user_id'];
         
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card">
-              <img src="assets/img/properties/gardenRetreat.jpg" alt="" class="img-fluid">
+              <img id="img2" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent" id="prop2_cost"></span>
-                <h3><a href="property-single.php?guest_house_id=2" class="stretched-link" id="prop2_name"></a></h3>
+                <h3><a href="property-single.php?guest_house_id=8" class="stretched-link" id="prop2_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -139,10 +139,10 @@ $user_id = $_SESSION['user_id'];
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card">
-              <img src="assets/img/properties/mountainView.jpg" alt="" class="img-fluid">
+              <img id="img3" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent" id="prop3_cost"></span>
-                <h3><a href="property-single.php?guest_house_id=4" class="stretched-link" id="prop3_name"></a></h3>
+                <h3><a href="property-single.php?guest_house_id=6" class="stretched-link" id="prop3_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -163,11 +163,11 @@ $user_id = $_SESSION['user_id'];
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <img src="assets/img/properties/cozyhaven.jpg" alt="" class="img-fluid">
+              <img id="img4" alt="" class="img-fluid">
               
               <div class="card-body">
                 <span class="sale-rent" id="prop4_cost"></span>
-                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link" id="prop4_name"></a></h3>
+                <h3><a href="property-single.php?guest_house_id=4" class="stretched-link" id="prop4_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -189,7 +189,7 @@ $user_id = $_SESSION['user_id'];
         
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card">
-              <img src="assets/img/properties/gardenRetreat.jpg" alt="" class="img-fluid">
+              <img id="img5" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent" id="prop5_cost"></span>
                 <h3><a href="property-single.php?guest_house_id=2" class="stretched-link" id="prop5_name"></a></h3>
@@ -214,10 +214,10 @@ $user_id = $_SESSION['user_id'];
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card">
-              <img src="assets/img/properties/mountainView.jpg" alt="" class="img-fluid">
+              <img id="img6" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent" id="prop6_cost"></span>
-                <h3><a href="property-single.php?guest_house_id=4" class="stretched-link" id="prop6_name"></a></h3>
+                <h3><a href="property-single.php?guest_house_id=5" class="stretched-link" id="prop6_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>

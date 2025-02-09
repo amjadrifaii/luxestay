@@ -30,8 +30,10 @@
         }
 
         else if ($uri=="/luxestay/get-data.php/get_guest_house_properties"){
-            $query="SELECT guest_house_id,guest_house_name, area,beds,baths,garages,cost, guest_house_des, guest_house_about,
-            owner_id, location_id FROM guest_houses";
+            $query="SELECT guest_houses.guest_house_id,guest_houses.guest_house_name, 
+            guest_houses.area, guest_houses.beds, guest_houses.baths,guest_houses.garages, 
+            guest_houses.cost, images.image_path AS guest_house_image FROM guest_houses
+           JOIN images ON guest_houses.guest_house_id = images.guest_house_id";
             $result=mysqli_query($conn,$query);
             if($result && mysqli_num_rows($result)>0){
                 while($rows=mysqli_fetch_assoc($result))
