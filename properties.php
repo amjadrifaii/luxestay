@@ -142,7 +142,7 @@ $user_id = $_SESSION['user_id'];
               <img src="assets/img/properties/mountainView.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $100</span>
-                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Moutain View</a></h3>
+                <h3><a href="property-single.php?guest_house_id=3" class="stretched-link">Moutain View</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -166,7 +166,7 @@ $user_id = $_SESSION['user_id'];
               <img src="assets/img/properties/peacefulCottage.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $100</span>
-                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Peaceful Cottage</a></h3>
+                <h3><a href="property-single.php?guest_house_id=4" class="stretched-link">Peaceful Cottage</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -190,7 +190,7 @@ $user_id = $_SESSION['user_id'];
               <img src="assets/img/properties/pineRidge.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $300</span>
-                <h3><a href="property-single.?guest_house_id=3" class="stretched-link">Pine Ridge</a></h3>
+                <h3><a href="property-single.php?guest_house_id=6" class="stretched-link">Pine Ridge</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -209,59 +209,14 @@ $user_id = $_SESSION['user_id'];
             </div>
           </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card">
-              <img src="assets/img/properties/property-1.jpg" alt="" class="img-fluid">
-              <div class="card-body">
-                <span class="sale-rent">Rent | $100</span>
-                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Property</a></h3>
-                <div class="card-content d-flex flex-column justify-content-center text-center">
-                  <div class="row propery-info">
-                    <div class="col">Area</div>
-                    <div class="col">Beds</div>
-                    <div class="col">Baths</div>
-                    <div class="col">Garages</div>
-                  </div>
-                  <div class="row">
-                    <div class="col">120m2</div>
-                    <div class="col">5</div>
-                    <div class="col">2</div>
-                    <div class="col">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card">
-              <img src="assets/img/properties/sunrise.jpg" alt="" class="img-fluid">
-              <div class="card-body">
-                <span class="sale-rent">Rent | $90</span>
-                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Sunrise</a></h3>
-                <div class="card-content d-flex flex-column justify-content-center text-center">
-                  <div class="row propery-info">
-                    <div class="col">Area</div>
-                    <div class="col">Beds</div>
-                    <div class="col">Baths</div>
-                    <div class="col">Garages</div>
-                  </div>
-                  <div class="row">
-                    <div class="col">80m2</div>
-                    <div class="col">2</div>
-                    <div class="col">2</div>
-                    <div class="col">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Property Item -->
+  
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="card">
               <img src="assets/img/properties/sunsetVilla.jpg" alt="" class="img-fluid">
               <div class="card-body">
                 <span class="sale-rent">Rent | $200</span>
-                <h3><a href="property-single.php?guest_house_id=2" class="stretched-link">Sunset villa</a></h3>
+                <h3><a href="property-single.php?guest_house_id=8" class="stretched-link">Sunset villa</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -279,34 +234,6 @@ $user_id = $_SESSION['user_id'];
               </div>
             </div>
           </div>
-
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card">
-              <img src="assets/img/properties/tranquil.jpg" alt="" class="img-fluid">
-              <div class="card-body">
-                <span class="sale-rent">Rent | $50</span>
-                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link">Peace</a></h3>
-                <div class="card-content d-flex flex-column justify-content-center text-center">
-                  <div class="row propery-info">
-                    <div class="col">Area</div>
-                    <div class="col">Beds</div>
-                    <div class="col">Baths</div>
-                    <div class="col">Garages</div>
-                  </div>
-                  <div class="row">
-                    <div class="col">50m2</div>
-                    <div class="col">1</div>
-                    <div class="col">2</div>
-                    <div class="col">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
 </form>
     </section><!-- /Real Estate Section -->
 

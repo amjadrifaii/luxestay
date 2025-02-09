@@ -73,6 +73,7 @@ function selectDate(dateStr, dayElement) {
               checkout.innerText = `Checkout: ${selectedEnd}`;
               totalNights.innerText = `Total Nights: ${nights}`;
               prices.innerText = `Price: $${totalPrice}`;
+              
               }
     }
         else if (!selectedEnd && dateStr == selectedStart) {

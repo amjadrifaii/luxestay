@@ -1,9 +1,18 @@
 <?php
   session_start();
-  if(!isset($_SESSION['guest_house_id']))
-  $_SESSION['guest_house_id']=$_GET['guest_house_id'];
-  if($_SESSION['guest_house_id']!=$_GET['guest_house_id'])
-    $_SESSION['guest_house_id']=$_GET['guest_house_id'];
+  if (!isset($_SESSION['user_id'])) {
+      header("Location: login.php");
+      exit();
+  }
+  
+  
+  $user_id = $_SESSION['user_id'];
+  if (isset($_GET['guest_house_id'])){
+        $_SESSION['guest_house_id']=$_GET['guest_house_id'];
+  }
+  
+  require 'db_connect.php';
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -168,7 +177,7 @@
         <div class="container">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current" id="house_location">bint jbeil</li>
+            <li class="current" id="house_location"></li>
           </ol>
         </div>
       </nav>
@@ -227,7 +236,7 @@
                 <p id="guest_house_about">
                 </p>
           </div>
-          <form method="GET">
+          <form method="POST">
  <h2><b>Reservation Calendar:</b></h2>
  
     <div id="calendar-container">

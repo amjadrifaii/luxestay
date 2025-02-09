@@ -62,6 +62,7 @@ $user_id = $_SESSION['user_id'];
             <div>
 
               <p>Mountain View</p>
+   
               <h2>Hemena</h2>
               <p id="test"></p>
               <a href="property-single.php" class="btn-get-started">rent | $ 100</a>
