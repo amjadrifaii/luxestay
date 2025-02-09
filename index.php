@@ -5,6 +5,8 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
+if (!isset($_SESSION['guest_house_id'])) 
+  $_SESSION['guest_house_id']=1;
 require 'db_connect.php';
 $user_id = $_SESSION['user_id'];
 ?>
