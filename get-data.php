@@ -19,8 +19,8 @@
         }
     
         else if ($uri=="/luxestay/get-data.php/get_guest_house"){
-            $query="SELECT guest_house_name, area,beds,baths,cost, guest_house_des, guest_house_about,
-             guest_house_id,owner_id, location_id FROM guest_houses WHERE guest_house_id=$house_id";
+            $query="SELECT guest_house_id,guest_house_name, area,beds,baths,garages,cost, guest_house_des, guest_house_about,
+            owner_id, location_id FROM guest_houses WHERE guest_house_id=$house_id";
             $result=mysqli_query($conn,$query);
             if($result && mysqli_num_rows($result)>0){
                 while($rows=mysqli_fetch_assoc($result))
@@ -28,6 +28,18 @@
             }
     
         }
+
+        else if ($uri=="/luxestay/get-data.php/get_guest_house_properties"){
+            $query="SELECT guest_house_id,guest_house_name, area,beds,baths,garages,cost, guest_house_des, guest_house_about,
+            owner_id, location_id FROM guest_houses";
+            $result=mysqli_query($conn,$query);
+            if($result && mysqli_num_rows($result)>0){
+                while($rows=mysqli_fetch_assoc($result))
+                    $data[]=$rows;
+            }
+    
+        }
+
 
         else if($uri=='/luxestay/get-data.php/get_guest_house_location'){
             $query="SELECT loc.location_desc FROM locations loc JOIN guest_houses gh ON loc.location_id = gh.location_id WHERE gh.guest_house_id=$house_id";
@@ -70,10 +82,28 @@
         }
 
     }
+    else if ($uri == '/luxestay/get-data.php/get_guest_house_index') {
+        // Correct the table name in the query
+        $query = "SELECT guest_houses.guest_house_id, guest_houses.guest_house_name, guest_houses.cost,
+                    images.image_path,locations.location_desc
+                  FROM guest_houses 
+                  INNER JOIN locations ON guest_houses.location_id = locations.location_id
+                  INNER JOIN images ON guest_houses.guest_house_id=images.guest_house_id";
+        
+        // Execute the query
+        $result = mysqli_query($conn, $query);
+        
+        // Check if the query was successful and if there are rows returned
+        if ($result && mysqli_num_rows($result) > 0) {
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $data[] = $rows; // Append each row to the data array
+            }
+    }
 }
     
     
     
     mysqli_close($conn);
     echo json_encode($data);//encode data as jason file to send them out
+}
 ?>

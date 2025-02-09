@@ -91,8 +91,8 @@ $user_id = $_SESSION['user_id'];
               <img src="assets/img/properties/cozyhaven.jpg" alt="" class="img-fluid">
               
               <div class="card-body">
-                <span class="sale-rent">Rent | $120</span>
-                <h3><a type="submit" href="property-single.php?guest_house_id=1" class="stretched-link">Cozy Heaven</a></h3>
+                <span class="sale-rent" id="prop1_cost"></span>
+                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link" id="prop1_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -101,10 +101,10 @@ $user_id = $_SESSION['user_id'];
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">120m2</div>
-                    <div class="col">4</div>
-                    <div class="col">2</div>
-                    <div class="col">2</div>
+                    <div class="col" id="prop1_area"></div>
+                    <div class="col" id= "prop1_beds"></div>
+                    <div class="col" id="prop1_baths"></div>
+                    <div class="col" id="prop1_garages"></div>
                   </div>
                 </div>
               </div>
@@ -116,8 +116,8 @@ $user_id = $_SESSION['user_id'];
             <div class="card">
               <img src="assets/img/properties/gardenRetreat.jpg" alt="" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Rent | 80$</span>
-                <h3><a href="property-single.php?guest_house_id=2" class="stretched-link">Garden Retreat</a></h3>
+                <span class="sale-rent" id="prop2_cost"></span>
+                <h3><a href="property-single.php?guest_house_id=2" class="stretched-link" id="prop2_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -126,10 +126,10 @@ $user_id = $_SESSION['user_id'];
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">60m2</div>
-                    <div class="col">2</div>
-                    <div class="col">2</div>
-                    <div class="col">1</div>
+                    <div class="col" id="prop2_area"></div>
+                    <div class="col" id="prop2_beds"></div>
+                    <div class="col" id="prop2_baths"></div>
+                    <div class="col" id="prop2_garages"></div>
                   </div>
                 </div>
               </div>
@@ -141,8 +141,8 @@ $user_id = $_SESSION['user_id'];
             <div class="card">
               <img src="assets/img/properties/mountainView.jpg" alt="" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Rent | $100</span>
-                <h3><a href="property-single.php?guest_house_id=3" class="stretched-link">Moutain View</a></h3>
+                <span class="sale-rent" id="prop3_cost"></span>
+                <h3><a href="property-single.php?guest_house_id=4" class="stretched-link" id="prop3_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -151,22 +151,23 @@ $user_id = $_SESSION['user_id'];
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">80m2</div>
-                    <div class="col">5</div>
-                    <div class="col">2</div>
-                    <div class="col">2</div>
+                    <div class="col"><p id="prop3_area"></p></div>
+                    <div class="col"><p id="prop3_beds"></p></div>
+                    <div class="col"><p id="prop3_baths"></p></div>
+                    <div class="col"><p id="prop3_garages"></p></div>
                   </div>
                 </div>
               </div>
             </div>
           </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <img src="assets/img/properties/peacefulCottage.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/cozyhaven.jpg" alt="" class="img-fluid">
+              
               <div class="card-body">
-                <span class="sale-rent">Rent | $100</span>
-                <h3><a href="property-single.php?guest_house_id=4" class="stretched-link">Peaceful Cottage</a></h3>
+                <span class="sale-rent" id="prop4_cost"></span>
+                <h3><a href="property-single.php?guest_house_id=1" class="stretched-link" id="prop4_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -175,22 +176,23 @@ $user_id = $_SESSION['user_id'];
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">45m2</div>
-                    <div class="col">1</div>
-                    <div class="col">2</div>
-                    <div class="col">1</div>
+                    <div class="col" id="prop4_area"></div>
+                    <div class="col" id= "prop4_beds"></div>
+                    <div class="col" id="prop4_baths"></div>
+                    <div class="col" id="prop4_garages"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card">
-              <img src="assets/img/properties/pineRidge.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/gardenRetreat.jpg" alt="" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Rent | $300</span>
-                <h3><a href="property-single.php?guest_house_id=6" class="stretched-link">Pine Ridge</a></h3>
+                <span class="sale-rent" id="prop5_cost"></span>
+                <h3><a href="property-single.php?guest_house_id=2" class="stretched-link" id="prop5_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -199,10 +201,10 @@ $user_id = $_SESSION['user_id'];
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">100m2</div>
-                    <div class="col">4</div>
-                    <div class="col">2</div>
-                    <div class="col">1</div>
+                    <div class="col" id="prop5_area"></div>
+                    <div class="col" id="prop5_beds"></div>
+                    <div class="col" id="prop5_baths"></div>
+                    <div class="col" id="prop5_garages"></div>
                   </div>
                 </div>
               </div>
@@ -210,13 +212,12 @@ $user_id = $_SESSION['user_id'];
           </div><!-- End Property Item -->
 
 
-  
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="card">
-              <img src="assets/img/properties/sunsetVilla.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/mountainView.jpg" alt="" class="img-fluid">
               <div class="card-body">
-                <span class="sale-rent">Rent | $200</span>
-                <h3><a href="property-single.php?guest_house_id=8" class="stretched-link">Sunset villa</a></h3>
+                <span class="sale-rent" id="prop6_cost"></span>
+                <h3><a href="property-single.php?guest_house_id=4" class="stretched-link" id="prop6_name"></a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
                   <div class="row propery-info">
                     <div class="col">Area</div>
@@ -225,15 +226,16 @@ $user_id = $_SESSION['user_id'];
                     <div class="col">Garages</div>
                   </div>
                   <div class="row">
-                    <div class="col">80m2</div>
-                    <div class="col">2</div>
-                    <div class="col">2</div>
-                    <div class="col">1</div>
+                    <div class="col"><p id="prop6_area"></p></div>
+                    <div class="col"><p id="prop6_beds"></p></div>
+                    <div class="col"><p id="prop6_baths"></p></div>
+                    <div class="col"><p id="prop6_garages"></p></div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div><!-- End Property Item -->
+</div>
 </form>
     </section><!-- /Real Estate Section -->
 
@@ -258,6 +260,7 @@ $user_id = $_SESSION['user_id'];
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <Script src="assets/js/retrieve-data-properties.js"></script>
 
 </body>
 

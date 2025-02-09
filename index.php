@@ -57,37 +57,39 @@ $user_id = $_SESSION['user_id'];
                                                                                                           and the time intervall is set inside data-bs-interval-->
 
         <div class="carousel-item active"> <!-- active is necessary else items won't show and won't auto scroll -->
-          <img src="assets/img/hero-carousel/mountainView.jpg" alt="">
+          <img id="img1" alt="">
           <div class="carousel-container">
             <div>
 
-              <p>Mountain View</p>
+              <p id="prop1_name"></p>
    
-              <h2>Hemena</h2>
-              <p id="test"></p>
-              <a href="property-single.php" class="btn-get-started">rent | $ 100</a>
+              <h2 id="prop1_location"></h2>
+              <a href="property-single.php?guest_house_id=8" class="btn-get-started" style="height: 50px;"><p id="prop1_cost"></p></a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
 
-        <div class="carousel-item">
-          <img src="assets/img/hero-carousel/pineRidge.jpg" alt="">
+        < <div class="carousel-item"> <!-- active is necessary else items won't show and won't auto scroll -->
+          <img id="img2" alt="">
           <div class="carousel-container">
             <div>
-              <p>Pine Ridge</p>
-              <h2>Zahle</h2>
-              <a href="property-single.php" class="btn-get-started">Rent | $ 300</a>
+
+              <p id="prop2_name"></p>
+   
+              <h2 id="prop2_location"></h2>
+              <a href="property-single.php" class="btn-get-started" style="height: 50px;"><p id="prop2_cost"></p></a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
-
-        <div class="carousel-item">
-          <img src="assets/img/hero-carousel/sunsetVilla2.jpg" alt="">
+        <div class="carousel-item"> <!-- active is necessary else items won't show and won't auto scroll -->
+          <img id="img3" alt="">
           <div class="carousel-container">
             <div>
-              <p>Sunset Villa</p>
-              <h2>Batroun</h2>
-              <a href="property-single.php" class="btn-get-started">rent | $ 200</a>
+
+              <p id="prop3_name"></p>
+   
+              <h2 id="prop3_location"></h2>
+              <a href="property-single.php?guest_house_id=6" class="btn-get-started" style="height: 50px;"><p id="prop3_cost"></p></a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -203,6 +205,7 @@ $user_id = $_SESSION['user_id'];
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/retrieve-data-index.js"></script>
 </body>
 
 </html>

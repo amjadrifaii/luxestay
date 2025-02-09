@@ -269,13 +269,14 @@
               <div class="portfolio-info">
                 <h3>Quick Summary</h3>
                 <ul>
-                  <li><strong>Property ID:</strong> 1</li>
-                  <li><strong>Location:</strong> Bint Jbeil</li>
+                  <li><strong>Property ID:</strong><p id="property_id"></p></li>
+                  <li><strong>Location:</strong><p id="property_location"></p></li>
                   <li"><strong>Property Type:</strong><p id="property_type"></p></li>
                   <li><strong>Status:</strong><p id="house_status">Rent</p> </li>
                   <li><strong>Area:</strong> <p class="house_area inline" id="house_area"></p></li>
                   <li><strong>Beds:</strong> <p id="house_beds"></p></li>
                   <li><strong>Baths:</strong><p id="house_baths"></p></li>
+                  <li><strong>Garages:</strong><p id="house_garages"></p></li>
                   <li><strong>Rent:</strong><p id="house_costpn"></p></li>
                 </ul>
               </div>
