@@ -1,6 +1,5 @@
 function generateCalendar(year, month, cal) {
-    let bookedDates=[];
-    let booked=[];
+    
     cal.innerHTML = ""; // Clear previous calendar
     const firstDay = new Date(year, month, 1);  // First day of the current month
     const lastDay = new Date(year, month + 1, 0); // Last day of the current month
@@ -13,19 +12,25 @@ function generateCalendar(year, month, cal) {
         dayElement.setAttribute("data-date", dateStr); // Add a data attribute for the date
         // Check if the date is booked
 
-    fetch('get-data.php/get_reservations')
-    .then(response=>response.json())
-    .then(item=>{
-       if(item && item.length>0){
-        for(i=0;i<item.length-1;i++)
-            bookedDates+=item[i].reservation_date+',';
-        bookedDates+=item[i].reservation_date;
-        booked=bookedDates.split(',');
-        }
+        fetch('get-data.php/get_reservations')
+        .then(response => response.json())
+        .then(item => {
+            let bookedDates = '';
+            let booked = [];    
+            if (item && item.length > 0) {
+                for (let i = 0; i < item.length; i++) {
+                    if (item[i].reservation_date) {
+                        bookedDates += item[i].reservation_date + ',';
+                    }
+                }
+                if (bookedDates.endsWith(',')) {
+                    bookedDates = bookedDates.slice(0, -1);
+                }
+                booked = bookedDates.split(',');
+            }
         if (booked.includes(dateStr)) {
-            dayElement.classList.add("disabled");  // Disable this date if it's in bookedDates
+            dayElement.classList.add("disabled");
         } else {
-            // Enable the date for selection if it's not booked
             dayElement.addEventListener("click", () => selectDate(dateStr, dayElement));
         }
         

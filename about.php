@@ -182,7 +182,7 @@
             <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-chevron-right flex-shrink-0"></i>
               <div>
-                <h4><a href="" class="stretched-link">Prime Locations</a></h4>
+                <h4 class="stretched-link">Prime Locations</h4>
                 <p>Our properties are strategically located in the most desirable neighborhoods, offering easy access
                    to schools, workplaces, shopping centers, public transport, and recreational areas. You'll never be far from what you need.</p>
               </div>
@@ -191,7 +191,7 @@
             <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-chevron-right flex-shrink-0"></i>
               <div>
-                <h4><a href="" class="stretched-link">Quality & Well-Maintained Homes</a></h4>
+                <h4 class="stretched-link">Quality & Well-Maintained Homes</h4>
                 <p>We prioritize the upkeep of all our properties, ensuring they are regularly maintained, clean, and ready for you to move in.
                    You can trust us to provide a safe and comfortable living environment.</p>
               </div>
@@ -200,7 +200,7 @@
             <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
               <i class="bi bi-chevron-right flex-shrink-0"></i>
               <div>
-                <h4><a href="" class="stretched-link">Affordable Rent with Flexible Payment Plans</a></h4>
+                <h4 class="stretched-link">Affordable Rent with Flexible Payment Plans</h4>
                 <p>We offer competitive rental prices, along with flexible payment options, making it
                    easier to find a home within your budget. No hidden fees, just transparent pricing.</p>
               </div>
@@ -209,7 +209,7 @@
             <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
               <i class="bi bi-chevron-right flex-shrink-0"></i>
               <div>
-                <h4><a href="" class="stretched-link">Responsive Customer Support</a></h4>
+                <h4 class="stretched-link">Responsive Customer Support</h4>
                 <p>Our dedicated customer service team is available to assist you whenever you need help. Whether it's a maintenance request
                   , a question, or a concern, we'
                   re here for you.</p>
