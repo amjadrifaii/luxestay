@@ -1,0 +1,11 @@
+users table: contains(id-username-userlastname-useremail-userphone-userpassword) with password encrypted via php
+agents table: contains (id-full name-department- image path) with id is foreign key from users(delete restricted and update cascade)
+website_images:contains (id-image_path-section) with image path leading to local path and about leading to which section of the website its used, its for clarification only
+locations: contains(id-location_desc)
+images: contains (id-image_path,guest_house_id) where guest_house_id is foreign key leading to guest houses table, cascade on update and delete
+house_types:contains(id-type_desc)
+
+guest_houses:contains(id-name-area-beds-garages-cost-description-about-location id-house type) WITH location_id is foreign key from locations(delete restrict and update cascade) and same for house_type
+
+resevations: contains(id-date-house id-user id) with house id foreign key from guest_houses(allowed to be deleted or updated) so when we change house id in guest houses it gets changed in here too
+ and user_id is foreign key from users(allowed to be deleted but not updated) means we cant change user id after he made a reservation but reservation can will be deleted when use is deleted
